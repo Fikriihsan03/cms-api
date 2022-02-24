@@ -1,9 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const swaggerUi = require("swagger-ui-express");
 
 const port = process.env.PORT || 3000;
 
 const app = express();
+const swaggerDocument = require("./swagger-output.json");
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(bodyParser.json());
 
 const menus = require("./routes/menus");
