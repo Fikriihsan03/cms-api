@@ -165,9 +165,31 @@ const deleteNewsById = (req, res) => {
     });
   });
 };
+const newsPagination = (req, res) => {
+  const { page, perPage } = req.query;
+  News.findAll({
+    limit: Number(perPage * page),
+  }).then((data) => {
+    const startIndex = (page - 1) * perPage;
+    const endIndex = page * perPage;
+    const result = data.slice(startIndex, endIndex);
+
+    return res.status(200).json({
+      status: 200,
+      data: result,
+      meta: {
+        page: page,
+        perPage: perPage,
+        totalData: result.length,
+        totalPage: Number(page),
+      },
+    });
+  });
+};
 module.exports = {
   createNews,
   getNewsById,
   updateNewsDataById,
   deleteNewsById,
+  newsPagination,
 };
