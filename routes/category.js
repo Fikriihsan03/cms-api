@@ -1,10 +1,8 @@
 const { Category } = require("../models/Category");
-const { v4: uuidv4 } = require("uuid");
 const createCategory = (req, res) => {
   const { name } = req.body;
 
   Category.create({
-    id: uuidv4(),
     name: name,
   })
     .then((data) => {

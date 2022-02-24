@@ -7,7 +7,7 @@ const Category = db.define(
     // Model attributes are defined here
     id: {
       type: DataTypes.STRING,
-      // defaultValue: "6001ccae-3239-4529-9fd4-bd64424cb2c6",
+      defaultValue: "6001ccae-3239-4529-9fd4-bd64424cb2c6",
       primaryKey: true,
     },
     name: {
