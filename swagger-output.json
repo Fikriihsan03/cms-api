@@ -5,11 +5,9 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "https://cms-api1.herokuapp.com/",
+  "host": "https://cms-api1.herokuapp.com",
   "basePath": "/",
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["http"],
   "paths": {
     "/api/v1/admin/cms/menus": {
       "post": {
