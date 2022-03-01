@@ -5,8 +5,8 @@ const doc = {
     title: "CMS API",
     description: "Description",
   },
-  host: "https://cms-api1.herokuapp.com",
-  schemes: ["http"],
+  host: "cms-api1.herokuapp.com",
+  schemes: ["https"],
 };
 
 const outputFile = "./swagger-output.json";
